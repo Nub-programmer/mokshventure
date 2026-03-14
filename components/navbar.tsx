@@ -18,8 +18,17 @@ export function Navbar() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
       <nav className="container mx-auto px-4 py-4 flex items-center justify-between">
-        <Link href="/" className="text-2xl font-bold text-primary">
-          Moksh Venture
+        <Link
+          href="/"
+          className="inline-flex items-baseline gap-2 leading-none transition-opacity hover:opacity-90"
+          aria-label="Moksh Venture"
+        >
+          <span className="text-xl md:text-2xl font-semibold tracking-wide text-foreground">
+            Moksh
+          </span>
+          <span className="text-sm md:text-base font-medium uppercase tracking-[0.28em] text-primary/90">
+            Venture
+          </span>
         </Link>
 
         {/* Desktop Navigation */}
