@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
-import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
 const _geist = Geist({ subsets: ["latin"] });
@@ -9,23 +8,29 @@ const _geistMono = Geist_Mono({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: 'Moksh Venture - Restaurant in Dehradun',
   description: 'Experience authentic flavors at Moksh Venture, Dehradun. Order via WhatsApp or call us for delicious Indian cuisine.',
-  generator: 'v0.app',
+  applicationName: 'Moksh Venture',
   icons: {
-    icon: [
+    icon: '/icon.svg',
+  },
+  openGraph: {
+    type: 'website',
+    title: 'Moksh Venture - Restaurant in Dehradun',
+    description: 'Experience authentic flavors at Moksh Venture, Dehradun. Order via WhatsApp or call us for delicious Indian cuisine.',
+    siteName: 'Moksh Venture',
+    images: [
       {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
+        url: '/images/hero-restaurant.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Moksh Venture restaurant in Dehradun',
       },
     ],
-    apple: '/apple-icon.png',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Moksh Venture - Restaurant in Dehradun',
+    description: 'Experience authentic flavors at Moksh Venture, Dehradun. Order via WhatsApp or call us for delicious Indian cuisine.',
+    images: ['/images/hero-restaurant.jpg'],
   },
 }
 
@@ -38,7 +43,6 @@ export default function RootLayout({
     <html lang="en">
       <body className="font-sans antialiased">
         {children}
-        <Analytics />
       </body>
     </html>
   )
